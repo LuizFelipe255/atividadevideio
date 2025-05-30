@@ -3,19 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Projeto com 3 Páginas - Navegação Simples</title>
+<title>Projeto com 3 Páginas - Navegação Integrada</title>
 <style>
+  * {
+    box-sizing: border-box;
+  }
   body {
-    margin: 0; padding: 20px;
+    margin: 0; 
+    padding: 20px;
     font-family: Calibri, sans-serif;
+    background: #2c2c2c;
+    color: #eee;
     min-height: 100vh;
-    color: #fff;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    display: flex; flex-direction: column; align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   main {
-    max-width: 900px;
     width: 100%;
+    max-width: 900px;
     flex-grow: 1;
   }
   section {
@@ -26,143 +32,139 @@
   }
   h1 {
     margin-top: 0;
+    color: #9c63ff;
+  }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
   }
   iframe {
     width: 100%;
     max-width: 560px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16/9;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 0 0 15px rgba(156, 99, 255, 0.5);
   }
   .videos {
     display: flex;
     gap: 20px;
-    margin: 30px 0;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 25px 0;
   }
   .videos iframe {
-    max-width: 420px;
+    max-width: 270px;
   }
   nav {
     margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     max-width: 900px;
+    display: flex;
+    justify-content: space-between;
   }
   button {
-    background: rgba(255,255,255,0.2);
-    color: #fff;
+    background: #9c63ff;
     border: none;
-    padding: 10px 18px;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
   }
   button:disabled {
-    opacity: 0.4;
-    cursor: default;
+    background: #5e39b8;
+    cursor: not-allowed;
   }
   button:hover:not(:disabled) {
-    background: rgba(255,255,255,0.4);
+    background: #6e45e8;
   }
 
-  /* Background especial para a página 3 */
-  #pagina3.active {
-    background: url('https://cdn.openai.com/API/images/dall-e-2/social/robo-mountains.png') no-repeat center center fixed;
-    background-size: cover;
-    padding: 40px 20px;
+  /* Estilo da imagem na página 3 */
+  #pagina3 img {
+    max-width: 100%;
     border-radius: 12px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);
-  }
-  #pagina3 .content {
-    background: rgba(0,0,0,0.4);
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
+    box-shadow: 0 0 15px rgba(156, 99, 255, 0.7);
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
 </head>
 <body>
-  <main>
-    <!-- Página 1 - Home -->
-    <section id="pagina1" class="active" aria-label="Página 1 - Home">
-      <h1>O Poder da Programação</h1>
-      <p>A programação é a base que transforma ideias em soluções digitais capazes de mudar o mundo.</p>
-      <iframe src="https://www.youtube.com/embed/2OCtztJ8-fI" title="Vídeo sobre programação" allowfullscreen></iframe>
-    </section>
 
-    <!-- Página 2 -->
-    <section id="pagina2" aria-label="Página 2 - Vídeos educacionais">
-      <h1>Aprendendo com Vídeos</h1>
-      <p>Confira dois vídeos que mostram conceitos importantes para programadores iniciantes e avançados.</p>
-      <div class="videos">
-        <iframe src="https://www.youtube.com/embed/6Tl0P1fq0F0" title="Vídeo 1: Fundamentos da Programação" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/0Gaj4zFhWmE" title="Vídeo 2: Boas práticas de código" allowfullscreen></iframe>
-      </div>
-      <p>Esses vídeos ajudam a entender tanto a base quanto as melhores práticas para escrever códigos limpos, eficientes e fáceis de manter.</p>
-    </section>
+<main>
+  <!-- Página 1 - Home -->
+  <section id="pagina1" class="active" aria-label="Página 1 - Home">
+    <h1>O Poder da Programação</h1>
+    <p>
+      A programação é a ferramenta que permite transformar ideias em realidade, desenvolvendo soluções inovadoras que impactam o mundo ao nosso redor.
+    </p>
+    <iframe src="https://www.youtube.com/embed/gMxQ8vxH9Vk" title="Lógica de programação, por onde começar?" allowfullscreen></iframe>
+  </section>
 
-    <!-- Página 3 -->
-    <section id="pagina3" aria-label="Página 3 - Background IA">
-      <div class="content">
-        <h1>Imagem Gerada por IA</h1>
-        <p>
-          Esta imagem de fundo foi criada por inteligência artificial usando o modelo DALL·E 2 da OpenAI.
-          Ela representa um robô contemplando montanhas futurísticas em um cenário digital e onírico.
-        </p>
-      </div>
-    </section>
-  </main>
+  <!-- Página 2 - Vídeos -->
+  <section id="pagina2" aria-label="Página 2 - Vídeos Educacionais">
+    <h1>Aprendendo com Vídeos</h1>
+    <p>
+      Estes vídeos apresentam conceitos fundamentais para quem deseja se aprofundar no mundo da programação e desenvolvimento de sistemas.
+    </p>
+    <div class="videos">
+      <iframe src="https://www.youtube.com/embed/dXZRgW-X2ls" title="Introdução à Programação Orientada a Objetos" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/22nd99SLgNA" title="Como funcionam as Linguagens de Programação" allowfullscreen></iframe>
+    </div>
+    <p>
+      O primeiro vídeo cobre conceitos básicos de programação, enquanto o segundo fala sobre como funcionam as linguagens de programação.
+    </p>
+  </section>
 
-  <nav aria-label="Navegação entre páginas">
-    <button id="btnVoltar" disabled aria-disabled="true" aria-label="Voltar página">← Voltar</button>
-    <button id="btnAvancar" aria-label="Avançar página">Avançar →</button>
-  </nav>
+  <!-- Página 3 - Exibindo a imagem -->
+  <section id="pagina3" aria-label="Página 3 - Imagem">
+    <h1>Imagem da Mulher fazendo programa</h1>
+    <p>Aqui está a imagem carregada diretamente na página:</p>
+    <img src="imagem/mulher-programando.png" alt="Mulher programando" />
+  </section>
+</main>
+
+<nav aria-label="Navegação entre páginas">
+  <button id="btnVoltar" aria-label="Voltar página" disabled>← Voltar</button>
+  <button id="btnAvancar" aria-label="Avançar página">Avançar →</button>
+</nav>
 
 <script>
-  const sections = document.querySelectorAll('main > section');
+  const paginas = document.querySelectorAll('main > section');
   const btnVoltar = document.getElementById('btnVoltar');
   const btnAvancar = document.getElementById('btnAvancar');
 
   let paginaAtual = 0;
 
   function mostrarPagina(index) {
-    sections.forEach((sec, i) => {
-      if(i === index) {
-        sec.classList.add('active');
-      } else {
-        sec.classList.remove('active');
-      }
+    paginas.forEach((sec, i) => {
+      sec.classList.toggle('active', i === index);
     });
 
     btnVoltar.disabled = (index === 0);
-    btnVoltar.setAttribute('aria-disabled', btnVoltar.disabled);
-    btnAvancar.disabled = (index === sections.length - 1);
-    btnAvancar.setAttribute('aria-disabled', btnAvancar.disabled);
+    btnAvancar.disabled = (index === paginas.length - 1);
   }
 
   btnVoltar.addEventListener('click', () => {
-    if(paginaAtual > 0) {
+    if (paginaAtual > 0) {
       paginaAtual--;
       mostrarPagina(paginaAtual);
     }
   });
 
   btnAvancar.addEventListener('click', () => {
-    if(paginaAtual < sections.length - 1) {
+    if (paginaAtual < paginas.length - 1) {
       paginaAtual++;
       mostrarPagina(paginaAtual);
     }
   });
 
-  // Inicializa exibindo a página 1
   mostrarPagina(paginaAtual);
 </script>
 
